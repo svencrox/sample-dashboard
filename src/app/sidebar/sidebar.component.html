@@ -1,0 +1,60 @@
+<!-- Button to toggle the sidebar -->
+<button
+  id="sidebarToggle"
+  (click)="toggleSidebar()"
+  class="btn btn-dark d-md-none"
+>
+  <i class="fas fa-bars"></i>
+</button>
+
+<nav id="sidebar" [ngClass]="{ active: isSidebarOpen }" class="bg-dark">
+  <div class="sidebar-header">
+    <h3>Dashboard</h3>
+  </div>
+
+  <ul class="list-unstyled components">
+    <li>
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="active"
+        (click)="closeSidebar()"
+        class="btn btn-dark"
+        >Dashboard</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/clients"
+        routerLinkActive="active"
+        (click)="closeSidebar()"
+        class="btn btn-dark"
+        >Clients</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/users"
+        routerLinkActive="active"
+        (click)="closeSidebar()"
+        class="btn btn-dark"
+        >Users</a
+      >
+    </li>
+    <li>
+      <a
+        routerLink="/campaigns"
+        routerLinkActive="active"
+        (click)="closeSidebar()"
+        class="btn btn-dark"
+        >Campaigns</a
+      >
+    </li>
+  </ul>
+</nav>
+
+<hr />
+<!-- User info and Logout -->
+<div class="user-info p-3">
+  <p class="text-white">Current User: John Doe</p>
+  <button class="btn btn-danger" (click)="logout()">Logout</button>
+</div>
