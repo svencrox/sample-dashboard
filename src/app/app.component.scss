@@ -1,0 +1,13 @@
+.sidebar{
+    height: 100vh;
+    @media (max-width: 767px) {
+        height: fit-content;
+    }
+}
+
+.content-wrapper{
+    height: 100vh;
+    @media (max-width: 767px) {
+        height: fit-content;
+    }
+}

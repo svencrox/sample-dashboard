@@ -2,17 +2,22 @@
 <button
   id="sidebarToggle"
   (click)="toggleSidebar()"
-  class="btn btn-dark d-md-none"
+  class="btn btn-dark d-sm-none"
 >
   <i class="fas fa-bars"></i>
 </button>
 
-<nav id="sidebar" [ngClass]="{ active: isSidebarOpen }" class="bg-dark">
+<nav
+  id="sidebar"
+  [ngClass]="{ active: isSidebarOpen }"
+  *ngIf="isSidebarOpen"
+  class="bg-dark d-flex flex-md-column flex-sm-row"
+>
   <div class="sidebar-header">
-    <h3>Dashboard</h3>
+    <h3 class="navbar-brand">Dashboard</h3>
   </div>
 
-  <ul class="list-unstyled components">
+  <ul class="list-unstyled">
     <li>
       <a
         routerLink="/dashboard"
@@ -51,10 +56,3 @@
     </li>
   </ul>
 </nav>
-
-<hr />
-<!-- User info and Logout -->
-<div class="user-info p-3">
-  <p class="text-white">Current User: John Doe</p>
-  <button class="btn btn-danger" (click)="logout()">Logout</button>
-</div>

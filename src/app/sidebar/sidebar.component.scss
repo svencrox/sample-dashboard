@@ -1,9 +1,5 @@
 #sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
     height: 100%;
-    width: 250px;
     padding-top: 20px;
     transition: transform 0.3s ease-in-out;
 
@@ -11,34 +7,31 @@
         transform: translateX(0);
     }
 
-    /* Media query for smaller screens (adjust the breakpoint as needed) */
-    @media (max-width: 768px) {
-        transform: translateX(-100%);
+    li{
+        margin-bottom: 8px;
     }
 
-    /* Make the sidebar content take up the remaining vertical space using flexbox */
-    display: flex;
-    flex-direction: column;
+    @media (max-width: 767px) {
+        transform: translateX(-100%);
+
+        .list-unstyled{
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
 }
   
 /* Set the sidebar header to be fixed height (optional) */
 .sidebar-header {
-    height: 60px;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
-}
 
-.user-info {
-    position: fixed;
-    width: 250px;
-    border-top: 1px solid #444;
-    padding-top: 20px;
-    bottom: 0;
-    left: 0;
-
-    .btn{
-        width: 100%;
+    @media (max-width: 768px) {
+        display: none;
     }
 }

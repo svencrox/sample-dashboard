@@ -13,13 +13,14 @@ export class SidebarComponent {
   }
 
   closeSidebar(): void {
-    this.isSidebarOpen = false;
+    if (window.innerWidth < 768) {
+      this.isSidebarOpen = false;
+    }
   }
 
-  // Window resize event listener to close the sidebar on small screens
-  ngOnInit(): void {
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: Event): void {
     this.checkScreenSize();
-    window.addEventListener('resize', () => this.checkScreenSize());
   }
 
   checkScreenSize(): void {
