@@ -60,24 +60,21 @@
 
 	<!-- Financial Metrics -->
 	<div class="row">
-		<!-- Amount Payable -->
-		<div class="col-md-12">
+		<!-- Amount Payable Line Chart -->
+		<div class="col-md-8">
 			<div class="card mb-3">
-				<div class="card-header">Amount Payable</div>
 				<div class="card-body chart">
-					<canvas id="amount-payable" class="chart-canvas w-100"></canvas>
+					<div><h3>Amount Payable</h3></div>
+					<canvas id="amount-line" class="chart-canvas w-100"></canvas>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<!-- Amount Unpaid -->
-		<div class="col-md-12">
+		<!-- Amount Payable Pie Chart -->
+		<div class="col-md-4">
 			<div class="card mb-3">
-				<div class="card-header">Amount Unpaid</div>
-				<div class="card-body">
-					<h3>RM5,000</h3>
+				<div class="card-body chart">
+					<div><h3>Amount</h3></div>
+					<canvas id="amount-pie" class="chart-canvas w-100"></canvas>
 				</div>
 			</div>
 		</div>

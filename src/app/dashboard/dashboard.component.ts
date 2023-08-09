@@ -8,8 +8,10 @@ import { Chart } from "chart.js/auto";
 })
 export class DashboardComponent implements OnInit {
 	amountChart: any;
+	amountPie: any;
 	ngOnInit(): void {
 		this.initLineChart();
+		this.initPieCharrt();
 	}
 
 	@HostListener("window:resize", ["$event"])
@@ -20,7 +22,7 @@ export class DashboardComponent implements OnInit {
 	}
 
 	initLineChart() {
-		const amountChartId = document.getElementById("amount-payable") as HTMLCanvasElement;
+		const amountChartId = document.getElementById("amount-line") as HTMLCanvasElement;
 		this.amountChart = new Chart(amountChartId, {
 			type: "line",
 			data: {
@@ -35,7 +37,27 @@ export class DashboardComponent implements OnInit {
 			},
 			options: {
 				responsive: true,
-				maintainAspectRatio: true,
+			},
+		});
+	}
+
+	initPieCharrt() {
+		const amountPieId = document.getElementById("amount-pie") as HTMLCanvasElement;
+		this.amountPie = new Chart(amountPieId, {
+			type: "doughnut",
+			data: {
+				labels: ["Red", "Blue", "Yellow"],
+				datasets: [
+					{
+						label: "My First Dataset",
+						data: [300, 50, 100],
+						backgroundColor: ["rgb(255, 99, 132)", "rgb(54, 162, 235)", "rgb(255, 205, 86)"],
+						hoverOffset: 4,
+					},
+				],
+			},
+			options: {
+				responsive: true,
 			},
 		});
 	}
