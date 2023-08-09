@@ -11,3 +11,10 @@
         height: fit-content;
     }
 }
+
+.main-content{
+    margin-top: 20px;
+    @media (max-width: 576px){
+        margin-top: 50px;
+    }
+}

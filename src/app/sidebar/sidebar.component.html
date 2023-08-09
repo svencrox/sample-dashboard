@@ -1,58 +1,25 @@
 <!-- Button to toggle the sidebar -->
-<button
-  id="sidebarToggle"
-  (click)="toggleSidebar()"
-  class="btn btn-dark d-sm-none"
->
-  <i class="fas fa-bars"></i>
+<button id="sidebarToggle" (click)="toggleSidebar()" class="btn btn-dark d-sm-none">
+	<i class="fas fa-bars"></i>
 </button>
 
-<nav
-  id="sidebar"
-  [ngClass]="{ active: isSidebarOpen }"
-  *ngIf="isSidebarOpen"
-  class="bg-dark d-flex flex-md-column flex-sm-row"
->
-  <div class="sidebar-header">
-    <h3 class="navbar-brand">Dashboard</h3>
-  </div>
+<nav id="sidebar" [ngClass]="{ active: isSidebarOpen }" *ngIf="isSidebarOpen" class="bg-dark d-flex flex-md-column flex-sm-row">
+	<div class="sidebar-header mb-3">
+		<h3 class="navbar-brand">BRANDNAME</h3>
+	</div>
 
-  <ul class="list-unstyled">
-    <li>
-      <a
-        routerLink="/dashboard"
-        routerLinkActive="active"
-        (click)="closeSidebar()"
-        class="btn btn-dark"
-        >Dashboard</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/clients"
-        routerLinkActive="active"
-        (click)="closeSidebar()"
-        class="btn btn-dark"
-        >Clients</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/users"
-        routerLinkActive="active"
-        (click)="closeSidebar()"
-        class="btn btn-dark"
-        >Users</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/campaigns"
-        routerLinkActive="active"
-        (click)="closeSidebar()"
-        class="btn btn-dark"
-        >Campaigns</a
-      >
-    </li>
-  </ul>
+	<ul class="list-unstyled">
+		<li>
+			<a routerLink="/dashboard" routerLinkActive="active" (click)="closeSidebar()" class="btn btn-dark">Dashboard</a>
+		</li>
+		<li>
+			<a routerLink="/clients" routerLinkActive="active" (click)="closeSidebar()" class="btn btn-dark">Clients</a>
+		</li>
+		<li>
+			<a routerLink="/users" routerLinkActive="active" (click)="closeSidebar()" class="btn btn-dark">Users</a>
+		</li>
+		<li>
+			<a routerLink="/campaigns" routerLinkActive="active" (click)="closeSidebar()" class="btn btn-dark">Campaigns</a>
+		</li>
+	</ul>
 </nav>
