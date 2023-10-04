@@ -7,18 +7,31 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { ClientsComponent } from "./clients/clients.component";
 import { UsersComponent } from "./users/users.component";
 import { CampaignsComponent } from "./campaigns/campaigns.component";
-import { FormsModule } from "@angular/forms";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { CdkAccordionModule } from "@angular/cdk/accordion";
 import { ModalModule } from "ngx-bootstrap/modal";
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
-import { ClientFormModalComponent } from "./client-form-modal/client-form-modal.component";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-	declarations: [AppComponent, DashboardComponent, ClientsComponent, UsersComponent, CampaignsComponent, SidebarComponent, ClientFormModalComponent],
-	imports: [BrowserModule, MatIconModule, MatButtonModule, AppRoutingModule, FormsModule, MatExpansionModule, CdkAccordionModule, BrowserAnimationsModule, ModalModule.forRoot()],
+	declarations: [AppComponent, DashboardComponent, ClientsComponent, UsersComponent, CampaignsComponent, SidebarComponent],
+	imports: [
+		FormsModule,
+		BrowserModule,
+		MatIconModule,
+		MatButtonModule,
+		AppRoutingModule,
+		MatExpansionModule,
+		CdkAccordionModule,
+		BrowserAnimationsModule,
+		MatInputModule,
+		MatFormFieldModule,
+		ModalModule.forRoot(),
+	],
 	providers: [],
 	bootstrap: [AppComponent],
 })
